@@ -34,7 +34,7 @@ class _SimulatorScreenState extends State<SimulatorScreen> {
   final int totalSkills = 9;
   final Map<int, int> levelCosts = {30: 169000, 60: 169000 + 817500, 90: 169000 + 817500 + 1267500};
   final double refundRate = 0.9;
-  final int targetPets = 4;
+  final int targetPets = 1;
 
   final Map<int, int> skillsAtLevel = {30: 2, 60: 3, 90: 4};
 
@@ -184,7 +184,7 @@ class _SimulatorScreenState extends State<SimulatorScreen> {
             SizedBox(height: 8),
             Divider(),
             SizedBox(height: 8),
-            _buildResultRow('平均総コスト (4体)', formatWithK(result.averageTotalCost), isMain: true),
+            _buildResultRow('平均総コスト (1体)', formatWithK(result.averageTotalCost), isMain: true),
             _buildResultRow('中央値', formatWithK(result.medianCost)),
             _buildResultRow('範囲', '${formatWithK(result.minCost)} ～ ${formatWithK(result.maxCost)}'),
             SizedBox(height: 8),
