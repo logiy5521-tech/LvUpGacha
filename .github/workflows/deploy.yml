@@ -31,10 +31,14 @@ jobs:
           channel: 'stable'
       
       - name: Get dependencies
-        run: flutter pub get
+        run: |
+          cd flutter_application_1
+          flutter pub get
       
       - name: Build web
-        run: flutter build web --release --base-href /${{ github.event.repository.name }}/
+        run: |
+          cd flutter_application_1
+          flutter build web --release --base-href /LvUpGacha/
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -42,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build/web'
+          path: './flutter_application_1/build/web'
       
       - name: Deploy to GitHub Pages
         id: deployment
